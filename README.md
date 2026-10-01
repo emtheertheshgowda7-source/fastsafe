@@ -21,6 +21,10 @@ pnpm build
 
 The Preview service listens on port 3000. The route manifest is available at `/manus-routes.json`.
 
+## Live demonstration and delivery
+
+The presenter sequence is documented in [`docs/LIVE_DEMO.md`](docs/LIVE_DEMO.md). FASTSAFE also includes an installable PWA manifest, a production `Dockerfile`, and GitHub Actions CI at `.github/workflows/ci.yml`. For a container demo use `docker build -t fastsafe . && docker run --rm -p 3000:3000 fastsafe`. Deployment notes are in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
+
 ## Security posture
 
 Production must use HTTPS/TLS, bcrypt or Argon2id password hashing, secure sessions, MFA for admins, server-side validation, rate limiting, CSRF/CORS controls, signed short-lived QR tokens, single-use verification, least-privilege RBAC and audit logging without OTP/payment secrets. Demo mode is intentionally deterministic for presentation and does not claim production security certification.
